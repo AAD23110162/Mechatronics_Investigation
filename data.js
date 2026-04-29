@@ -31,22 +31,6 @@ const data = {
       "icon": "💧",
       "col": "#a855f7",
       "bio": "Única especialista en fluidos. Muy independiente, evita papeleo y procedimientos formales."
-    },
-    {
-      "id": "roberto",
-      "name": "Roberto Díaz",
-      "role": "Técnico PLC y Control",
-      "icon": "💻",
-      "col": "#ef4444",
-      "bio": "Programador autodidacta. Su código funciona, pero nadie más lo entiende ni lo puede auditar."
-    },
-    {
-      "id": "none",
-      "name": "Falla Natural",
-      "role": "Desgaste por Ciclos",
-      "icon": "🔩",
-      "col": "#6b7280",
-      "bio": "Ningún técnico es responsable. El componente llegó al fin de su vida útil de forma natural."
     }
   ],
   "LOCS": [
@@ -143,7 +127,7 @@ const data = {
       "clues": {
         "ensamble": { "hot": false, "text": "La falla ocurre ÚNICA Y EXCLUSIVAMENTE cuando la cadencia supera el 85% de velocidad. En ciclo lento la máquina opera perfectamente durante horas. Una falla eléctrica, mecánica o de hardware no discriminaría por velocidad de operación. Esto apunta directamente a la lógica de control." },
         "control": { "hot": true, "text": "⚡ EVIDENCIA DIRECTA: Log del servidor PLC: sesión de edición en bloque FC47 a las 02:15 hrs del martes pasado. Credenciales: ARobles_AT (ID: 4471 — Ana Robles). Tres líneas modificadas en la sección de gestión de timers de ciclo de alta velocidad." },
-        "almacen": { "hot": false, "text": "Roberto prestó a Ana, hace 2 semanas, su manual técnico \"Gestión de Errores en Step 7\". Al revisarlo, hay Post-its marcados en páginas 112–115 sobre \"condiciones de carrera en Function Blocks de alta frecuencia\". Firmados con letra de Ana." },
+        "almacen": { "hot": false, "text": "Ana recibió hace 2 semanas un manual técnico sobre gestión de PLCs prestado por Carlos. Al revisarlo, hay Post-its marcados en páginas 112–115 sobre \"condiciones de carrera en Function Blocks de alta frecuencia\". Firmados con letra de Ana." },
         "subestacion": { "hot": false, "text": "Registros eléctricos de los últimos 7 días: voltaje estable ±2%, corriente dentro de parámetros, sin interferencias detectadas. La causa definitivamente no es eléctrica. El suministro de energía es irreprochable." },
         "soldadura": { "hot": true, "text": "⚡ PISTA: El robot RW-03 de soldadura perdió sincronía exactamente al mismo instante que la máquina principal en los 3 eventos de falla. Ambos comparten el bloque FC47 del PLC maestro como referencia de ciclo. La correlación es perfecta y matemáticamente improbable si fuera coincidencia." }
       }
@@ -184,19 +168,19 @@ const data = {
     },
     {
       "id": 4,
-      "culprit": "none",
+      "culprit": "carlos",
       "cause": "sensor",
       "location": "ensamble",
-      "title": "Historia V — La Máquina Agotada",
-      "incident": "Fallas aleatorias e impredecibles en Línea 3 desde hace 3 semanas con frecuencia creciente: de 1 evento/día a 8 eventos/día. Sin correlación con acciones del personal ni condiciones específicas. Todos los técnicos fueron interrogados; ninguno reporta intervenciones recientes en el área.",
-      "motive": null,
-      "ending": "¡Nadie tuvo la culpa! El sensor inductivo SN-112 del área de ensamble llegó al fin de su vida útil. El núcleo ferroso sufrió desgaste natural tras 26 meses de operación continua en un ambiente con vibración de 3.1G RMS. La ficha técnica del fabricante (Pepperl+Fuchs, Serie NCB) especifica reemplazo preventivo a los 18 meses en ambientes con vibración superior a 2.5G. La falla fue del sistema de mantenimiento preventivo, no de un técnico. Se auditaron y sustituyeron todos los sensores similares con fecha de instalación superior a 18 meses en toda la planta.",
+      "title": "Historia V — El Sensor Forzado",
+      "incident": "Fallas aleatorias e impredecibles en Línea 3 desde hace 3 semanas con frecuencia creciente: de 1 evento/día a 8 eventos/día. Aunque los síntomas parecen desgaste natural, el patrón coincide con una intervención manual reciente en el área de ensamble.",
+      "motive": "Carlos insistió durante meses en que el sensor inductivo SN-112 del área de ensamble debía reemplazarse preventivamente. Tras ser ignorado, decidió forzar una parada visible para demostrar el riesgo. Manipuló la calibración del sensor y dejó el sistema trabajando fuera de tolerancia para que el fallo se hiciera evidente bajo carga.",
+      "ending": "El análisis del SN-112 mostró que la sensibilidad había sido alterada manualmente y que la calibración coincidía con una ventana de acceso de Carlos al área de ensamble. Aunque el sensor ya estaba próximo al fin de vida útil, la intervención aceleró la degradación y volvió el fallo imposible de ignorar. Carlos fue sancionado por intervenir sin autorización y el plan de mantenimiento preventivo fue reforzado.",
       "clues": {
-        "ensamble": { "hot": true, "text": "⚡ EVIDENCIA DIRECTA: Sensor SN-112 en analizador portátil de señal: distancia de detección efectiva reducida de 8 mm (valor nominal) a 3.2 mm (−60% de capacidad). Cuerpo físico del sensor intacto sin daño visible, pero parámetros internos completamente fuera de especificación. Desgaste progresivo del núcleo ferroso interno." },
-        "control": { "hot": true, "text": "⚡ PISTA: El histórico SCADA muestra variaciones de señal del SN-112 iniciando hace 3 semanas, con amplitud creciente de forma lineal (de 1 a 8 fallas/día). Este patrón es la \"curva de bañera ascendente\" — modelo matemático clásico de degradación por envejecimiento de componente electrónico. No corresponde a sabotaje ni intervención humana." },
-        "almacen": { "hot": true, "text": "⚡ PISTA CLAVE: Ficha de instalación del SN-112 (lote NCB-F55K, Q4-2021): en servicio hace 26 meses. La hoja técnica Pepperl+Fuchs indica: \"Vida útil estimada: 18 meses en ambientes con vibración > 2.5G RMS\". El acelerómetro del bastidor de Línea 3 registra 3.1G RMS en operación normal. Debería haberse reemplazado hace 8 meses." },
+        "ensamble": { "hot": true, "text": "⚡ EVIDENCIA DIRECTA: Sensor SN-112 en analizador portátil de señal: distancia de detección efectiva reducida de 8 mm (valor nominal) a 3.2 mm (−60% de capacidad). Cuerpo físico del sensor intacto sin daño visible, pero la calibración fue alterada manualmente. La sensibilidad interna quedó fuera de especificación." },
+        "control": { "hot": true, "text": "⚡ PISTA: El histórico SCADA muestra variaciones de señal del SN-112 iniciando hace 3 semanas, con amplitud creciente de forma lineal (de 1 a 8 fallas/día). La curva coincide con una manipulación de umbral registrada en la ventana de acceso de Carlos y no con desgaste puramente natural." },
+        "almacen": { "hot": true, "text": "⚡ PISTA CLAVE: Ficha de instalación del SN-112 (lote NCB-F55K, Q4-2021): en servicio hace 26 meses. La hoja técnica Pepperl+Fuchs indica reemplazo a los 18 meses en vibración alta. Carlos había solicitado reposición preventiva y el pedido se retrasó semanas, dejando el equipo vulnerable a la intervención." },
         "subestacion": { "hot": false, "text": "Calidad de energía en subestación: voltaje estable ±1%, distorsión armónica THD <3%, sin sobretensiones registradas en 90 días de histórico. La causa eléctrica queda completamente descartada. El suministro es impecable." },
-        "soldadura": { "hot": false, "text": "Roberto realizó revisión completa y manual del PLC maestro: sin modificaciones en 6 meses, código íntegro y correcto. \"El controlador responde perfectamente a las señales que recibe. El problema está en la señal misma — en el sensor que la genera, no en quien la procesa.\"" }
+        "soldadura": { "hot": false, "text": "Luis realizó revisión completa y manual del PLC maestro: sin modificaciones en 6 meses, código íntegro y correcto. \"El controlador responde perfectamente a las señales que recibe. El problema está en la señal misma — en el sensor que la genera, no en quien la procesa.\"" }
       }
     }
   ]
