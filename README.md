@@ -1,5 +1,6 @@
-# Mechatronics Investigation
 
+# Mechatronics Investigation
+![MI Portada](Capturas/MI_Portada.png)
 ### Autor: Alejandro Aguire Díaz
 
 ### Demo en línea: https://aad23110162.github.io/Mechatronics_Investigation/
@@ -41,7 +42,7 @@ http-server -c-1 . 8000
 # abrir http://localhost:8000
 ```
 
-## Estructura del repositorio (resumen)
+## Estructura del repositorio
 Se incluyen los archivos y carpetas principales que conforman la aplicación. La carpeta `PROTOTIPO_V2.0/` existe en el repositorio pero no se documenta en detalle aquí.
 
 - [index.html](index.html): página principal y contenedores de UI.
