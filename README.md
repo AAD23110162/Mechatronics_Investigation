@@ -1,73 +1,63 @@
-# Mechatronics_Investigation
+# Mechatronics Investigation
 
-Proyecto interactivo "Mechatronics Clue" — listo para desplegar en GitHub Pages.
+### Autor: Alejandro Aguire Díaz
 
-## Temática
+### Demo en línea: https://aad23110162.github.io/Mechatronics_Investigation/
 
-Mechatronics Clue es un juego narrativo de investigación ambientado en una planta industrial. El jugador asume el rol de un inspector de calidad que debe resolver una falla en la Línea 3 observando pistas, revisando expedientes y tomando una acusación final sobre quién, qué y dónde provocó el incidente.
+## Descripcion
+Mechatronics Investigation es un juego web estática que simula una experiencia interactiva de investigación en una planta industrial. El usuario asume el rol de inspector y, mediante la navegación por un mapa de planta, recopilación de pistas y manejo de expedientes, intenta identificar la causa y el responsable de una falla.
 
-La experiencia mezcla estética industrial con una historia tipo detective: paneles de control, rutas de inspección, archivadores técnicos, mapas de planta y pantallas de veredicto. Todo el juego está construido para funcionar como una investigación guiada, con sonido, imágenes y rutas visuales coherentes con el entorno de fábrica.
 
-## Qué incluye
+## Características principales
+- Interfaz interactiva con mapa de planta y localizaciones clicables.
+- Sistema de pistas y expediente que habilita una acusación final.
+- Casos/historias precargadas gestionadas desde `data.json`/`data.js`.
+- Recursos multimedia: imágenes en `Images/` y sonidos en `Sound/`.
+- Compatible con GitHub Pages (incluye `404.html` para redirecciones SPA).
 
-- 4 personajes jugables/seleccionables con imagen en `Images/`.
-- 5 locaciones de investigación dentro de la planta.
-- 5 tipos de falla posibles.
-- Sistema de pistas, expediente y acusación final.
-- 5 historias precargadas con combinaciones consistentes.
-- Soporte para GitHub Pages con `404.html` de respaldo.
+## Tecnologías
+- HTML5, CSS3 (variables y layout responsivo).
+- JavaScript moderno (módulos ES): `main.js`, `ui.js`, `state.js`, `map.js`, `helpers.js`, `flowchart.js`.
+- JSON para contenido narrativo (`data.json`).
 
-## Capturas
+## Requisitos
+- Navegador moderno con soporte ES Modules.
+- Servidor HTTP para servir archivos estáticos (no funciona correctamente abriendo `index.html` por `file://`).
 
-Vista rápida del juego en sus pantallas principales:
-
-![Pantalla 1](Capturas/Pantalla%201.png)
-
-![Pantalla 2](Capturas/Pantalla%202.png)
-
-![Pantalla 3](Capturas/Pantalla%203.png)
-
-![Pantalla 4](Capturas/Pantalla%204.png)
-
-Instrucciones rápidas de despliegue:
-
-1. Asegúrate de que el repositorio contiene los archivos en la raíz (`index.html`, `data.json`, carpetas `js/`, `Images/`, `Sound/`, `Capturas/`).
-2. Empuja los cambios al branch `main` (o a la rama que uses para Pages).
-3. En GitHub > Settings > Pages, configura Source: `main` branch / root (`/`).
-4. Opcional: si usas la rama `gh-pages`, crea la rama y configura Pages desde ahí.
-
-## Estructura
-
-- `index.html`: interfaz principal y contenedores de pantallas.
-- `data.json`: contenido narrativo principal usado por el juego.
-- `data.js`: respaldo local cuando no se carga JSON.
-- `js/`: módulos del juego, estado, mapa, UI, flujo y utilidades.
-- `Images/`: arte e iconografía del juego.
-- `Sound/`: música y efectos de ambiente.
-- `Capturas/`: imágenes usadas en este README.
-
-## Cómo jugar
-
-1. Abre el juego desde un servidor local o desde GitHub Pages.
-2. Revisa el briefing inicial para entender el caso.
-3. Investiga al menos 3 locaciones para habilitar la acusación.
-4. Compara sospechosos, causa y lugar con las pistas recolectadas.
-5. Presenta tu acusación y revisa el veredicto final.
-
-## Detalles útiles
-
-- El juego usa módulos ES y por eso debe abrirse desde HTTP, no desde `file://`.
-- Las rutas de imágenes y sonidos son relativas al directorio raíz.
-- Si el navegador muestra un `404` de `favicon.ico`, no afecta el funcionamiento.
-
-Probar localmente:
+## Ejecutar localmente
+1. Clona el repositorio en tu máquina.
+2. Desde la raíz del proyecto, ejecuta un servidor HTTP simple. Ejemplo con Python:
 
 ```bash
-# desde la raíz del proyecto
 python3 -m http.server 8000
 # abrir http://localhost:8000
 ```
 
-Notas:
-- Se incluyó `404.html` que redirige a `/` para compatibilidad con GitHub Pages.
-- El cargador principal usa módulos ES desde `js/main.js`; abre el sitio desde un servidor (no `file://`).
+O con Node (si prefieres):
+
+```bash
+npm install -g http-server
+http-server -c-1 . 8000
+# abrir http://localhost:8000
+```
+
+## Estructura del repositorio (resumen)
+Se incluyen los archivos y carpetas principales que conforman la aplicación. La carpeta `PROTOTIPO_V2.0/` existe en el repositorio pero no se documenta en detalle aquí.
+
+- [index.html](index.html): página principal y contenedores de UI.
+- [styles.css](styles.css): estilos globales del proyecto.
+- [data.json](data.json): contenido narrativo (historias, personajes, locaciones, causas).
+- [data.js](data.js): respaldo/alternativa para carga de datos.
+- [main.js](main.js): inicialización y orquestación de módulos.
+- [ui.js](ui.js): gestión de componentes y eventos de la interfaz.
+- [state.js](state.js): gestión del estado del juego y progreso del usuario.
+- [map.js](map.js): lógica de interacción y render del mapa de planta.
+- [flowchart.js](flowchart.js): utilidades y flujo de la narrativa.
+- [helpers.js](helpers.js): funciones auxiliares reutilizables.
+- [Images/](Images/): recursos gráficos (personajes, íconos, fondos).
+- [Sound/](Sound/): archivos de audio y efectos.
+- [Capturas/](Capturas/): capturas de pantalla y material visual.
+
+
+
+
